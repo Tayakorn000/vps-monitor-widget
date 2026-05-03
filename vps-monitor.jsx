@@ -45,8 +45,8 @@ const saveConfig = (e) => {
   const pass = document.getElementById('vps-input-pass').value.trim()
   if (!host || !user || !pass) return
 
-  const escaped = JSON.stringify({ host, user, pass }).replace(/'/g, "'\\''")
-  run(`/bin/sh -c 'echo '${escaped}' > $HOME/.vps-widget-config'`)
+  const json = JSON.stringify({ host, user, pass })
+  run(`/bin/bash -c "echo '${json.replace(/'/g, "'\\''")}' > $HOME/.vps-widget-config"`)
     .then(() => {
       localStorage.setItem('vps-config-saved', '1')
       showConfig = false
