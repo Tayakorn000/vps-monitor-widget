@@ -44,4 +44,4 @@ A draggable macOS desktop widget that shows real-time CPU and RAM usage of a Win
 
 ## License
 
-MIT
+Tayakorn Wetchakun
